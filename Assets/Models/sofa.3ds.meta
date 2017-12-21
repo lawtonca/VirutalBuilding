@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: 2d3f586186790834eb198305d3cc7752
+timeCreated: 1496251629
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Cap_1
+    100002: Cap_11
+    100004: Cap_2
+    100006: Cap_21
+    100008: Cloner
+    100010: Cloner_1
+    100012: Cloner_2
+    100014: Cube
+    100016: Cube_
+    100018: Cube_0
+    100020: Cube_1
+    100022: Cube_1 1
+    100024: Cube_2
+    100026: Cube_2 1
+    100028: Cube_3
+    100030: Cube_3 1
+    100032: Cube_4
+    100034: Cube_5
+    100036: Cube_6
+    100038: divan
+    100040: Hyper
+    100042: Hyper1
+    100044: HyperNURBS
+    100046: Loft_NURBS
+    100048: //RootNode
+    100050: Sweep_NURB
+    400000: Cap_1
+    400002: Cap_11
+    400004: Cap_2
+    400006: Cap_21
+    400008: Cloner
+    400010: Cloner_1
+    400012: Cloner_2
+    400014: Cube
+    400016: Cube_
+    400018: Cube_0
+    400020: Cube_1
+    400022: Cube_1 1
+    400024: Cube_2
+    400026: Cube_2 1
+    400028: Cube_3
+    400030: Cube_3 1
+    400032: Cube_4
+    400034: Cube_5
+    400036: Cube_6
+    400038: divan
+    400040: Hyper
+    400042: Hyper1
+    400044: HyperNURBS
+    400046: Loft_NURBS
+    400048: //RootNode
+    400050: Sweep_NURB
+    2300000: Cap_1
+    2300002: Cap_11
+    2300004: Cap_2
+    2300006: Cap_21
+    2300008: Cloner
+    2300010: Cloner_1
+    2300012: Cloner_2
+    2300014: Cube
+    2300016: Cube_
+    2300018: Cube_0
+    2300020: Cube_1
+    2300022: Cube_1 1
+    2300024: Cube_2
+    2300026: Cube_2 1
+    2300028: Cube_3
+    2300030: Cube_3 1
+    2300032: Cube_4
+    2300034: Cube_5
+    2300036: Cube_6
+    2300038: divan
+    2300040: Hyper
+    2300042: Hyper1
+    2300044: HyperNURBS
+    2300046: Loft_NURBS
+    2300048: Sweep_NURB
+    3300000: Cap_1
+    3300002: Cap_11
+    3300004: Cap_2
+    3300006: Cap_21
+    3300008: Cloner
+    3300010: Cloner_1
+    3300012: Cloner_2
+    3300014: Cube
+    3300016: Cube_
+    3300018: Cube_0
+    3300020: Cube_1
+    3300022: Cube_1 1
+    3300024: Cube_2
+    3300026: Cube_2 1
+    3300028: Cube_3
+    3300030: Cube_3 1
+    3300032: Cube_4
+    3300034: Cube_5
+    3300036: Cube_6
+    3300038: divan
+    3300040: Hyper
+    3300042: Hyper1
+    3300044: HyperNURBS
+    3300046: Loft_NURBS
+    3300048: Sweep_NURB
+    4300000: Cloner_2
+    4300002: Cube_0
+    4300004: Cube_1
+    4300006: Cloner_1
+    4300008: Cube_3
+    4300010: Cloner
+    4300012: Cube_2
+    4300014: Cube_6
+    4300016: divan
+    4300018: Loft_NURBS
+    4300020: Cap_1
+    4300022: Cap_21
+    4300024: Cube
+    4300026: Hyper
+    4300028: Cube_4
+    4300030: Hyper1
+    4300032: Cube_5
+    4300034: HyperNURBS
+    4300036: Cube_
+    4300038: Sweep_NURB
+    4300040: Cap_11
+    4300042: Cap_2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
