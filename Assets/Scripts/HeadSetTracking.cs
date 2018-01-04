@@ -1,7 +1,13 @@
 ﻿Fileusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+	This script is to be attached to the StreamVr controller's Eye component.
+	It will record the headset's position, velocity, and how far it has travel.
+	The HowOftenToUpdate variable is used to change how often the position, velocity, and distance traveled is updated
+	Once the program is shutdown it will automatically print these recorded values to a CSV file with the format Position.X,Position.Y,Velocity,Distance
+	The file will be located at Project/Results/Today's Date/ the file name is the number of files in the folder + 1, IE 3 files, new file is named 4.csv
+*/
 public class HeadSetTracking : MonoBehaviour {
 	public List<Vector3> Locations = new List<Vector3>();
     public List<float> Velocities = new List<float>();
@@ -38,7 +44,9 @@ public class HeadSetTracking : MonoBehaviour {
     {
         //get directory and file name for today
         string dir = System.IO.Directory.GetCurrentDirectory();
-        dir += @"\Results\" + System.DateTime.Today.ToString("\\dd-mm-yyyy");
+	string date = System.DateTime.Today.ToString("\\dd-mm-yyyy");
+	
+        dir += @"\Results\" + date.Replace("d", "0");
 
         //make sure the file for today exists
         if (!System.IO.Directory.Exists(dir))
