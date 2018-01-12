@@ -1,4 +1,4 @@
-﻿Fileusing System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /*
@@ -46,7 +46,7 @@ public class HeadSetTracking : MonoBehaviour {
         string dir = System.IO.Directory.GetCurrentDirectory();
 	string date = System.DateTime.Today.ToString("\\dd-mm-yyyy");
 	
-        dir += @"\Results\" + date.Replace("d", "0");
+		dir += @"\Results\" + date.Replace("d", "0");
 
         //make sure the file for today exists
         if (!System.IO.Directory.Exists(dir))
