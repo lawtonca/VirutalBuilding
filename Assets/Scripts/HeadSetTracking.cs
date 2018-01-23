@@ -44,8 +44,12 @@ public class HeadSetTracking : MonoBehaviour {
     {
         //get directory and file name for today
         string dir = System.IO.Directory.GetCurrentDirectory();
-	string date = System.DateTime.Today.ToString("\\dd-mm-yyyy");
-	
+	    string date = System.DateTime.Today.ToString("d");
+
+        //convert '/' to '-' because '/' represents directory change
+        date = date.Replace("/", "-");
+
+        //make directory location Game/Results/today
 		dir += @"\Results\" + date.Replace("d", "0");
 
         //make sure the file for today exists
