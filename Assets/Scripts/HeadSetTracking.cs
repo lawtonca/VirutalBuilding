@@ -42,26 +42,8 @@ public class HeadSetTracking : MonoBehaviour {
 
     private void OnApplicationQuit()
     {
-        //get directory and file name for today
-        string dir = System.IO.Directory.GetCurrentDirectory();
-	    string date = System.DateTime.Today.ToString("d");
 
-        //convert '/' to '-' because '/' represents directory change
-        date = date.Replace("/", "-");
-
-        //make directory location Game/Results/today
-		dir += @"\Results\" + date.Replace("d", "0");
-
-        //make sure the file for today exists
-        if (!System.IO.Directory.Exists(dir))
-        {
-            System.IO.Directory.CreateDirectory(dir);
-        }
-
-        //get file name based today's date and the number of files in that folder
-        int count = System.IO.Directory.GetFiles(dir, "*", System.IO.SearchOption.TopDirectoryOnly).Length + 1;
-        dir += @"\" + count;
-        writeToFile(dir + ".csv");
+        writeToFile(GenerateFileName("Results") + ".csv");
     }
     #endregion
 
@@ -85,11 +67,27 @@ public class HeadSetTracking : MonoBehaviour {
 
     void SaveVelAndDist(int firstIndex, int secondIndex)
     {
-        //save the distance and velocity between these two points, the first vector being Locations[firstIndex] and the second vector being Locations[secondLocation]
-        Distances.Add(CalculateDistance(Locations[firstIndex], Locations[secondIndex]));
-        Velocities.Add(CalculateVelocity(Locations[firstIndex], Locations[secondIndex], HowOftenToUpdate));
+        //we don't have any valued save so we pass NULL to avoid index out of bounds
+        if (Locations.Count < 1)
+        {
+            //save the distance and velocity between these two points, the first vector being Locations[firstIndex] and the second vector being Locations[secondLocation]
+            Distances.Add(CalculateDistance(null, null));
+            Velocities.Add(CalculateVelocity(null, null, HowOftenToUpdate));
+        }
+        //we only have 1 value saved so we pass NULL to avoid index out of bounds
+        else if (Locations.Count < 2)
+        {
+            //save the distance and velocity between these two points, the first vector being Locations[firstIndex] and the second vector being Locations[secondLocation]
+            Distances.Add(CalculateDistance(Locations[firstIndex], null));
+            Velocities.Add(CalculateVelocity(Locations[firstIndex], null, HowOftenToUpdate));
+        }
+        else
+        {
+            //save the distance and velocity between these two points, the first vector being Locations[firstIndex] and the second vector being Locations[secondLocation]
+            Distances.Add(CalculateDistance(Locations[firstIndex], Locations[secondIndex]));
+            Velocities.Add(CalculateVelocity(Locations[firstIndex], Locations[secondIndex], HowOftenToUpdate));
+        }
     }
-
     /// <summary>
     /// Calculates the distance between the two vectors, will return 0 if either vector is null
     /// </summary>
@@ -160,10 +158,42 @@ public class HeadSetTracking : MonoBehaviour {
     /// Writes the ToString to the file based on the name and directory passed into the paramters
     /// </summary>
     /// <param name="filename">String for the directory and file name of the file to be written</param>
-    void writeToFile(string filename)
+   public void writeToFile(string filename)
     {
         //writes the ToString to the file
         System.IO.File.WriteAllText(@filename, ToString());
+    }
+
+
+    /// <summary>
+    /// Generates the new file's name and directory based on the location of the installation of the game and how many files are contained in the folder
+    /// File will be named Directory\*folderName*\Today\#filesInFolder + 1
+    /// </summary>
+    /// <param name="folderName">The name of the folder IE: "Results"</param>
+    /// <returns></returns>
+    public string GenerateFileName(string folderName)
+    {
+        //get directory and file name for today
+        string dir = System.IO.Directory.GetCurrentDirectory();
+        string date = System.DateTime.Today.ToString("d");
+
+        //convert '/' to '-' because '/' represents directory change
+        date = date.Replace("/", "-");
+
+        //make directory location Game/Results/today
+        dir += @"\" +  folderName + @"\" + date.Replace("d", "0");
+
+        //make sure the file for today exists
+        if (!System.IO.Directory.Exists(dir))
+        {
+            System.IO.Directory.CreateDirectory(dir);
+        }
+
+        //get file name based today's date and the number of files in that folder
+        int count = System.IO.Directory.GetFiles(dir, "*", System.IO.SearchOption.TopDirectoryOnly).Length + 1;
+        dir += @"\" + count;
+
+        return dir;
     }
     #endregion
 
