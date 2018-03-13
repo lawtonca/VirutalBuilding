@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 /*
 	This script is to be attached to the StreamVr controller's Eye component.
@@ -42,8 +43,15 @@ public class HeadSetTracking : MonoBehaviour {
 
     private void OnApplicationQuit()
     {
+        //attempt to get the current scene name
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = "";
+        if(currentScene != null)
+        {
+            sceneName = currentScene.name;
+        }
 
-        writeToFile(GenerateFileName("Results") + ".csv");
+        writeToFile(GenerateFileName("Results") + sceneName + ".csv");
     }
     #endregion
 
